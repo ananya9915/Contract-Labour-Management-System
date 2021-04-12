@@ -1,0 +1,127 @@
+<script>
+function CheckInput()
+{
+   if(workfrm.sdate.value=="")
+	{
+	alert("Please Enter Starting Date");
+	workfrm.sdate.value="";
+	workfrm.sdate.focus();
+	return false;
+	}else if(workfrm.edate.value=="")
+	{
+	alert("Please Enter End Date");
+	workfrm.edate.value="";
+	workfrm.edate.focus();
+		return false;
+	}else
+	{
+	  workfrm.action="LicenseExpiredDetails.jsp";
+	 }
+	
+	
+}
+
+function Back()
+{
+
+   workfrm.action="Reports.jsp";
+   
+
+}
+
+ 
+
+
+
+</script>
+<html>
+<head>
+</head>
+<body >
+
+<form name="workfrm" method="POST">
+
+<jsp:include page="MemberHeader.html" />
+  <div align="center">
+    <center>
+      <TABLE style="LEFT: 10px; ; TOP: 15px; HEIGHT: 61px" 
+cellPadding=0 border=0 bordercolorlight="#668CA2" bordercolordark="#668CA2" bgcolor="#FFFFFF" width="100%" height="50" align="center">
+        <tr bgcolor="#227CA8"> 
+          <td colspan="2" align="center" height="19"> 
+            <div align="left"><font color="#FFFFFF" face="Verdana" size="2"><b>License 
+              Expired Details</b></font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td colspan="2" height="19"><font face="Verdana, Arial, Helvetica, sans-serif"></font></td>
+        </tr>
+               
+        
+        
+       
+        <tr> 
+          <td height="20" width="295"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#227CA8"> 
+            StartDate</font></b></td>
+          <td height="20" width="685" bgcolor="#FFFFFF"><b> <font face="Verdana, Arial, Helvetica, sans-serif"> 
+            <input type="text" name="sdate"   readonly size="15" style="font-family: Verdana; font-weight: bold; border-style: outset; border-width: 1; color:#227CA8" >
+		 
+		 <a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.workfrm.sdate);
+			 return false;" HIDEFOCUS tabIndex=5> 
+			 <img name="popcal" align="absmiddle" src="Calendar\calbtn.gif" width="34" height="22" border="0" alt="">
+			</a>
+			
+			
+			
+			
+			
+
+            </font> </b></td>
+        </tr>  
+		
+		
+		  <tr> 
+          <td height="20" width="295"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#227CA8"> 
+            EndDate</font></b></td>
+          <td height="20" width="685" bgcolor="#FFFFFF"><b> <font face="Verdana, Arial, Helvetica, sans-serif"> 
+            <input type="text" name="edate"   readonly size="15" style="font-family: Verdana; font-weight: bold; border-style: outset; border-width: 1; color:#227CA8" >
+		 
+		 <a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.workfrm.edate);
+			 return false;" HIDEFOCUS tabIndex=5> 
+			 <img name="popcal" align="absmiddle" src="Calendar\calbtn.gif" width="34" height="22" border="0" alt="">
+			</a>
+			
+			
+			
+			
+			
+
+            </font> </b></td>
+        </tr> 
+		
+        <tr bgcolor="#227CA8" align="left"> 
+          <td colspan="2" height="25"><font color="#CCFFCC"><b> 
+          
+            <input type="submit" align="left" value="  Back  " 
+	  	   		   onClick="return Back()" style="font-weight: bold;cursor:hand; border-style: outset; border-width:0; color:#229CA8"  > 
+	  	             
+	              </b></font>
+          
+          
+          
+            <input type="submit" align="left" value="  Show  " 
+		   onClick="return CheckInput()" name="submit" style="font-weight: bold;cursor:hand; border-style: outset; border-width:0; color:#229CA8"  > 
+          
+            </b></font></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+    </center>
+  </div>
+</form>
+<iframe width=174 height=189 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js" src="Calendar\ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; left:-500px; top:0px;">
+</iframe> 
+
+<jsp:include page="Footer.html" />
+</body>
+
+</html>
