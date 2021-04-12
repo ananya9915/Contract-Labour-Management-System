@@ -1,0 +1,79 @@
+create DSn name gld;
+
+
+conn system/manager;
+
+create user gld identified by gld;
+
+grant dba to gld;
+
+conn gld/gld;
+
+
+
+create table company_master(
+distcode	number,
+rcno		varchar(50),
+company		varchar(50),
+noofworkers	varchar(50),
+nwork		varchar(50),
+fpaid		varchar(50),
+vchno		varchar(50),
+pdate		date,
+bank		varchar(50),
+woisdt		varchar(50),
+phno		varchar(50));
+
+create table licrenewal(
+licno		varchar(50),
+renwagrno	varchar(50),
+renwodated	date,
+rendate		date,
+renchno		varchar(50),
+renchdate	date,
+renamt		varchar(50),
+dtofexp		date,
+stdate		date,
+enddate		date,
+updated		number,
+rwbank		varchar(50),
+rwdate		date,
+rwamt		varchar(50));
+
+create table login(
+userid		varchar(50),
+pwd		varchar(50));
+
+
+
+insert into login values('Admin','Admin');
+
+
+
+
+create table workorder(
+licno		varchar(50) primary key,
+addrs		varchar(50),
+noworkers	varchar(50),
+nwork		varchar(50),
+workdt		date,
+rendt		date,
+rcno		varchar(50) references company_master(rcno) ,
+schno		varchar(50),
+sdate		date,
+samt		varchar(50),
+wbank		varchar(50),
+wchno		varchar(50),
+wdate		date,
+wamt		varchar(50),
+worderagno	varchar(50),
+wfamt		varchar(50),
+wisdate		date,
+lisdate		date,
+dtofexp		date,
+phno		varchar(50));
+
+
+commit;
+
+
